@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Profil Mahasiswa</title>
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Dirgel Blue Theme -->
+    <style>
+        :root {
+            --navy: #101C36;
+            --navy-light: #172A4D;
+            --blue: #4779D6;
+            --blue-light: #A8C7FA;
+            --background: #F4F7FC;
+            --text: #263653;
+            --muted: #71809A;
+            --border: #DCE5F3;
+            --white: #FFFFFF;
+        }
+
+        /* GENERAL */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: var(--navy) !important;
+            padding: 14px 0;
+        }
+
+        .navbar-brand {
+            color: var(--white) !important;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link {
+            color: #C7D5EE !important;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--blue-light) !important;
+        }
+
+        .navbar-toggler {
+            border-color: #657897;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.15rem rgba(168, 199, 250, 0.3);
+        }
+
+        /* ABOUT / HERO */
+        #tentang {
+            background-color: var(--navy) !important;
+            color: var(--white);
+            border: 1px solid var(--navy-light);
+            border-radius: 12px !important;
+            padding: 3rem !important;
+        }
+
+        #tentang h1 {
+            color: var(--white);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.8px;
+        }
+
+        #tentang .lead {
+            color: #C7D5EE;
+            font-size: 1.1rem;
+            margin-top: 18px;
+            margin-bottom: 24px;
+        }
+
+        #tentang .btn-primary {
+            background-color: var(--blue);
+            border: 1px solid var(--blue);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+
+        #tentang .btn-primary:hover {
+            background-color: #3867BD;
+            border-color: #3867BD;
+        }
+
+        /* PROJECT SECTION */
+        #karya h2 {
+            color: var(--navy);
+            font-weight: 700;
+            letter-spacing: -0.4px;
+        }
+
+        /* PROJECT CARDS */
+        .card {
+            height: 100%;
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: var(--blue-light);
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .card-title {
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .card-text {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* PROJECT BUTTONS */
+        .btn-outline-primary {
+            color: var(--blue);
+            border-color: var(--blue);
+            border-radius: 6px;
+            padding: 8px 16px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--blue);
+            border-color: var(--blue);
+            color: var(--white);
+        }
+
+        /* FOOTER */
+        footer {
+            border-color: var(--border) !important;
+            color: var(--muted) !important;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--navy);
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 767px) {
+            #tentang {
+                padding: 28px !important;
+            }
+
+            #tentang h1 {
+                font-size: 2rem;
+            }
+
+            #tentang .lead {
+                font-size: 1rem;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                Dirgel
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navigasi"
+                    aria-controls="navigasi"
+                    aria-expanded="false"
+                    aria-label="Buka navigasi">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navigasi">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#karya">Proyek</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container py-4">
+
+        <!-- ABOUT -->
+        <section id="tentang" class="p-4 p-md-5 mb-4 rounded-3">
+
+            <h1 class="display-5 fw-bold">
+                Halo, saya Rigel Rizky Aditya Panjaitan
+            </h1>
+
+            <p class="lead">
+                Saya sedang belajar membangun halaman web yang responsif.
+            </p>
+
+            <a class="btn btn-primary" href="#karya">
+                Lihat proyek yang saya kerjakan
+            </a>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+        <section id="karya" class="mb-4">
+
+            <h2 class="mb-3">
+                Proyek Saya
+            </h2>
+
+            <div class="row g-3">
+
+                <!-- PROJECT 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+
+                    <article class="card h-100">
+
+                        <div class="card-body">
+
+                            <h3 class="card-title h5">
+                                Can u guest my number?
+                            </h3>
+
+                            <p class="card-text">
+                                Ini adalah sebuah proyek permainan dimana
+                                pengguna akan menebak angka random yang
+                                dipilih program.
+                            </p>
+
+                            <a class="btn btn-outline-primary" href="#">
+                                Lihat detail
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- PROJECT 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+
+                    <article class="card h-100">
+
+                        <div class="card-body">
+
+                            <h3 class="card-title h5">
+                                I will guest your number
+                            </h3>
+
+                            <p class="card-text">
+                                Ini adalah sebuah proyek dimana program
+                                akan menebak angkat yang dipikirkan pemain.
+                            </p>
+
+                            <a class="btn btn-outline-primary" href="#">
+                                Lihat detail
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- PROJECT 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+
+                    <article class="card h-100">
+
+                        <div class="card-body">
+
+                            <h3 class="card-title h5">
+                                Proyek Tiga
+                            </h3>
+
+                            <p class="card-text">
+                                Deskripsi singkat proyek ketiga.
+                            </p>
+
+                            <a class="btn btn-outline-primary" href="#">
+                                Lihat detail
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="border-top py-3 text-center text-secondary">
+
+            © 2026 Dirgel (Direktori Rigel) oleh Rigel Rizky Aditya
+            Panjaitan. Hak Cipta Dilindungi Undang-Undang.
+            | Kontak:
+            <a href="mailto:rigelrizky2@gmail.com">
+                rigelrizky2@gmail.com
+            </a>
+
+        </footer>
+
+    </main>
+
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
